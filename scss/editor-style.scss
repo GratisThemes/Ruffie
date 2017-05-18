@@ -1,0 +1,51 @@
+/*
+Theme Name: Ruffie
+Description: Used to style the TinyMCE editor.
+*/
+
+@import "00-variables";
+@import "02-essentials";
+@import "03-forms";
+@import "05-images";
+@import "10-post-formats";
+
+body{ 
+  background-color: white;
+  margin: 20px;
+}
+
+.mce-item-table{
+  th,
+  td{
+    border: 2px solid $borderColor;
+  }
+}
+
+.wp-caption-text,
+.gallery-caption,
+.wp-caption-dd{
+  text-align: left;
+  padding: 8px 8px 10px;
+
+  a{ text-decoration: underline; }
+}
+
+.gallery,
+.gallery-item{
+  float: none !important;
+}
+
+.gallery-item{
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+}
+
+.post-format-quote,
+.post-format-link,
+.post-format-status,
+.post-format-audio{
+  font-weight: bold;
+  font-size: 2em;
+
+  a{ text-decoration: underline; }
+}

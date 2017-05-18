@@ -1,0 +1,26 @@
+/* 12.0 Meta */
+.entry-meta{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.entry-meta span{
+	margin-right: 1rem;
+	i{
+		background-color: $buttonColor;
+		color: $buttonTextColor;
+		border: 2px solid $inputBorderColor;
+		border-radius: 16px !important;
+		padding: 4px 6px;
+	}
+}
+
+.tags{ margin-bottom: 2rem; }
+
+@media (max-width: 640px){
+	.entry-meta{ display: block; }
+	.entry-meta span{ 
+		display: block;
+		margin: 0 0 8px 0;
+	}
+}

@@ -1,0 +1,105 @@
+/* 5.0 Images */
+img{
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border: 2px solid $borderColor;
+	border-radius: 8px;
+}
+
+/* WP-alignment */
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail,
+.alignnone,
+.wp-caption{
+	max-width: 100%;
+	height: auto;
+}
+.alignright{
+	float: right;
+	margin: 0 0 1rem 1rem;
+}
+.alignleft{
+	float: left;
+	margin: 0 1rem 1rem 0;
+	
+}
+.aligncenter{ 
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto; 
+}
+
+/* Thumbnails and attackments */
+.post-thumbnail{
+	display: block;
+	margin: 16px 0;
+}
+
+/* WP-Caption */
+.wp-caption{
+	display: inline-block;
+	background-color: $codeTagColor;
+	overflow: hidden;
+	border: 2px solid $borderColor;
+	border-radius: 8px;
+	color: $black;
+
+	img{
+		border: 0;
+		border-bottom: 2px solid $black;
+		border-radius: 0;
+	}
+}
+
+.wp-caption-text,
+.gallery-caption{
+	font-size: .8rem;
+	padding: 8px;
+}
+
+.gallery{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.gallery-item{
+	background-color: $codeTagColor;
+	color: $black;
+	display: inline-block;
+	width: 100%;
+	width: calc(33.33% - 16px);
+	border: 2px solid $borderColor;
+	border-radius: 8px;
+	overflow: hidden;
+
+	img{
+		width: 100%; 
+		border: 0;
+		border-radius: 0;
+		border-bottom: 2px solid $borderColor;
+	}
+}
+
+.gallery-columns-1 .gallery-item{ width: 100%; }
+.gallery-columns-2 .gallery-item{ width: calc(50% - 16px); }
+.gallery-columns-3 .gallery-item{ width: calc(33.33% - 16px); }
+.gallery-columns-4 .gallery-item{ width: calc(25% - 16px); }
+.gallery-columns-5 .gallery-item{ width: calc(20% - 16px); }
+.gallery-columns-6 .gallery-item{ width: calc(16.66% - 16px); }
+.gallery-columns-7 .gallery-item{ width: calc(14.28% - 16px); }
+.gallery-columns-8 .gallery-item{ width: calc(12.5% - 16px); }
+.gallery-columns-9 .gallery-item{ width: calc(11.11% - 16px); }
+
+@media (max-width: 900px){
+	.gallery .gallery-item{ width: calc(50% - 16px); }
+}
+
+@media (max-width: 650px){
+	.gallery .gallery-item{ width: 100%; }
+}

@@ -1,0 +1,64 @@
+/* 4.0 Layout */
+.site-wrapper{
+	max-width: 1280px;
+	min-width: 200px;
+	margin: 0 auto;
+}
+
+.site-content{
+	display: flex;
+	margin: 32px 0;
+}
+
+main{ 
+	flex: 1;
+	width: 100%;
+	max-width: 100%;
+	min-width: 100px;
+}
+
+.left-sidebar-widget-area,
+.right-sidebar-widget-area{ max-width: 300px; }
+
+.left-sidebar-widget-area ~ main,
+.right-sidebar-widget-area ~ main{ max-width: 984px; }
+
+.left-sidebar-widget-area{ 
+	margin-right: 32px; 
+	order: -1;
+}
+
+.right-sidebar-widget-area{ margin-left: 32px; }
+
+@media (max-width: 1344px){
+	.site-wrapper{ margin: 0 32px; }
+}
+
+@media (max-width: 1280px){
+	.site-content{
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	main{ 
+		flex: auto;
+		width: 100%;
+	}
+
+	.left-sidebar-widget-area{ order: 0; }
+
+	.left-sidebar-widget-area,
+	.right-sidebar-widget-area{ 
+		max-width: calc(50% - 32px);
+	}
+}
+
+@media (max-width: 640px){
+	.site-content{ display: block; }
+
+	.left-sidebar-widget-area,
+	.right-sidebar-widget-area{ 
+		max-width: 100%;
+		margin: 32px 0;
+	}
+}

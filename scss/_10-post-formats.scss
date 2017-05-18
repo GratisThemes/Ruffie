@@ -1,0 +1,37 @@
+/* 10.0 Post formats */
+.single-format-chat,
+.single-format-quote,
+.single-format-link,
+.single-format-status,
+.single-format-audio,
+.single-format-video{
+  .post{
+    background-color: $white;
+    color: $buttonTextColor;
+    border: 2px solid $inputBorderColor;
+    border-radius: 16px !important;
+    padding: 8px;
+  }
+}
+
+.single-format-quote,
+.single-format-link,
+.single-format-status,
+.single-format-audio{
+  .post{
+    font-weight: bold;
+    font-size: 2em;
+  }
+}
+
+.single-format-quote{
+  q,
+  blockquote{
+    background: transparent;
+    border: none;
+  }
+}
+
+.single-format-link .post{ 
+  text-align: center;
+}

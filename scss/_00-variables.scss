@@ -1,0 +1,30 @@
+// Fonts
+$fontStack: "Open Sans", sans-serif;
+
+// Colors
+$red: #ca2f2a;
+$black: #191919;
+$white: #e9e9e9;
+$backgroundColor: $red;
+$textColor: $black;
+$textColor2: $black;
+$linkColor: $black;
+
+// Header menu colors
+$headerMenuBackgroundColor: $red;
+$headerSubMenuBackgroundColor: $red;
+$headerMenuLinkColor: $black;
+$headerMenuItemHoverColor: rgba(#000, .15);
+$currentMenuItemBackgroundColor: rgba(#000, .15);
+$currentMenuItemColor: $black;
+
+// Borders
+$borderColor: $black;
+$inputBorderColor: $black;
+
+// <code> tag and similar
+$codeTagColor: $white;
+
+// Forms and Buttons
+$buttonColor: $white;
+$buttonTextColor: $black;
