@@ -93,7 +93,7 @@ Font Awesome 4.6.3 by @davegandy
 - Fixed more escapes and translations
 - Fixed missing editor styles
 
-1.4.2 - 2016.05.18
+1.4.2 - 2017.05.18
 - Updated theme information for author rebranding
 - Added table of contents to style.css
 - Simplified js/functions.js
