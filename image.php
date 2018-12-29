@@ -1,40 +1,72 @@
 <?php
 /**
- * Template for displaying images
+ * Template for displaying Attachments
  *
  * @package Ruffie
- * @since Ruffie 1.3.0
+ * @since 1.0.0
+ * @version 1.5.0
  */
-get_header(); ?>
+?>
 
-<?php get_sidebar('above-content'); ?>
+<?php get_header(); ?>
 
-<div class="site-content">
-	<main>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part('template-parts/content_header'); ?>
+<div id="main-content-container">
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <div class="entry-attachment">
+  <main id="site-main" role="main">
+
+    <?php while ( have_posts() ): the_post(); ?>
+
+      <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+        <?php get_template_part( 'template-parts/header', 'entry' ); ?>
+        
+        <article class="entry-content">
+
+          <figure class="entry-attachment wp-block-image">
+            
             <?php echo wp_get_attachment_image( get_the_ID(), 'large' ); ?>
-            <?php the_excerpt(); ?>
-        </div>
-      </article>
 
-      <nav id="image-navigation" class="navigation image-navigation">
-        <div class="nav-links">
-          <div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'ruffie' ) ); ?></div>
-          <div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'ruffie' ) ); ?></div>
+            <figcaption class="wp-caption-text"><?php the_excerpt(); ?></figcaption>
+
+          </figure><!-- .entry-attackment -->
+
+          <?php the_content(); ?>
+
+          <?php
+          wp_link_pages( array(
+            'before' => '<div class="page-links">' . __( 'Pages:', 'ruffie' ),
+            'after' => '</div>',
+            'link_before' => '<span class="page-number">',
+            'link_after' => '</span>',
+          ) );
+          ?>
+        
+        </article><!-- .entry-content -->
+
+      </section>
+
+      <footer class="entry-footer">
+        
+        <div class="nav-links image-navigation">
+          
+          <div class="nav-previous">
+            <?php previous_image_link( false, __( 'Previous Image', 'ruffie' ) ); ?>
+          </div>
+          
+          <div class="nav-next">
+            <?php next_image_link( false, __( 'Next Image', 'ruffie' ) ); ?>
+          </div>
+        
         </div><!-- .nav-links -->
-      </nav><!-- .image-navigation -->
-			
-			<?php if ( comments_open() || get_comments_number() ) comments_template(); ?>
-		
-		<?php endwhile; ?>
-	</main>
+      
+      </footer><!-- .entry-footer -->
 
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar(); ?>
-</div>
+      <?php if ( comments_open() || get_comments_number() ) comments_template(); ?>
+      
+    <?php endwhile; ?>
+
+  </main><!-- #site-main -->
+
+</div><!-- #main-content-continer -->
 
 <?php get_footer(); ?>

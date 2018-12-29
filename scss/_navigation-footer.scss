@@ -1,0 +1,32 @@
+#footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  list-style: none;
+  color: var(--color-border);
+  
+  a {
+    color: var(--color-border);
+  }
+
+  > * {
+    background-color: var(--color-highlight);
+    border: 0.125em solid var(--color-border);
+    border-radius: 32px;
+    text-transform: uppercase;
+    padding: 0 .5em;
+    margin: 0 .5em .5em 0;
+    font-weight: 800;
+
+    &:hover {
+      background-color: var(--color-border);
+      color: var(--color-highlight);
+
+      a {
+        color: var(--color-highlight);
+        text-decoration: none !important;
+      }
+    }
+  }
+}

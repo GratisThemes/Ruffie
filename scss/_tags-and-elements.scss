@@ -1,0 +1,184 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: .5em 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.8rem;
+}
+
+p {
+  line-height: 1.5em;
+  margin: 0 0 1.5em;
+}
+
+blockquote {
+  background-color: var(--color-highlight);
+  border: 0.125em solid var(--color-border);
+  border-radius: 1em;
+  padding: 1em;
+  margin: 0 0 .5em;
+
+  &::before {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    content: '\f10d';
+  }
+
+  p {
+    margin: 0 0 .5em;
+  }
+}
+
+table,
+td,
+th {
+  border: 0.125em solid var(--color-border);
+}
+
+table {
+  background-color: var(--color-highlight);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-width: 0.125em 0 0 0.125em;
+  max-width: 100%;
+  margin-bottom: 1.5em;
+  word-wrap: normal;
+}
+
+td,
+th {
+  border-width: 0 0.125em 0.125em 0;
+  text-align: left;
+  padding: 1em;
+}
+
+dt { 
+  font-weight: bold; 
+}
+
+dd { 
+  margin: 0 0 1em 1em; 
+}
+
+ul,
+ol {
+  margin: 0 0 0 2em;
+  padding: 0;
+}
+
+li {
+  margin: .5em 0;
+}
+
+address {
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+a {
+  color: var(--color-anchor);
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+abbr {
+  cursor: help;
+}
+
+acronym {
+  cursor: help;
+}
+
+cite {
+  font-style: italic;
+}
+
+code {
+  background-color: var(--color-highlight);
+  color: var(--color-text);
+  border: 0.125em solid var(--color-border);
+  padding: 0 .25em;
+  border-radius: 1em;
+  font-weight: normal;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  height: 0.125em;
+  background-color: var(--color-border);
+  margin: 1em 0;
+}
+
+ins {
+  text-decoration: none;
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: 0 .25em;
+}
+
+pre {
+  background-color: var(--color-highlight);
+  border: 0.125em solid var(--color-border);
+  border-radius: 2em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em;
+  word-wrap: normal;
+  font-weight: normal;
+}
+
+q {
+  font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+  table {
+    display: inline-block;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}

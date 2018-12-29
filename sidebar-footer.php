@@ -4,40 +4,44 @@
  *
  * @package Ruffie
  * @since Ruffie 1.0
+ * @version 1.5.0
  */
+?>
 
+<?php // Quit early if there are no widget areas to display
 if( !is_active_sidebar( 'footer-widget-area-one' )  &&
-		!is_active_sidebar( 'footer-widget-area-two' )  &&
-		!is_active_sidebar( 'footer-widget-area-three' )  &&
-		!is_active_sidebar( 'footer-widget-area-four' ) 
+    !is_active_sidebar( 'footer-widget-area-two' )  &&
+    !is_active_sidebar( 'footer-widget-area-three' )  &&
+    !is_active_sidebar( 'footer-widget-area-four' ) 
 ){
-	return false;
-} ?>
+  return false;
+}
+?>
 
-<div class="footer-widget-areas-container">
+<div id="footer-widget-areas-container">
 
-	<?php if ( is_active_sidebar( 'footer-widget-area-one' ) ) : ?>
-		<div class="footer-widget-area-one footer-widget-area sidebar widget-area" role="complementary">
-			<?php dynamic_sidebar( 'footer-widget-area-one' ); ?>
-		</div><!-- .footer-widget-area-one .sidebar .widget-area -->
-	<?php endif; ?>
+  <?php if ( is_active_sidebar( 'footer-widget-area-one' ) ) : ?>
+    <div id="widget-area-footer-one" class="widget-area" role="complementary">
+      <?php dynamic_sidebar( 'footer-widget-area-one' ); ?>
+    </div><!-- #widget-area-footer-one -->
+  <?php endif; ?>
 
-	<?php if ( is_active_sidebar( 'footer-widget-area-two' ) ) : ?>
-		<div class="footer-widget-area-two footer-widget-area sidebar widget-area" role="complementary">
-			<?php dynamic_sidebar( 'footer-widget-area-two' ); ?>
-		</div><!-- .footer-widget-area-two .sidebar .widget-area -->
-	<?php endif; ?>
+  <?php if ( is_active_sidebar( 'footer-widget-area-two' ) ) : ?>
+    <div id="widget-area-footer-two" class="widget-area" role="complementary">
+      <?php dynamic_sidebar( 'footer-widget-area-two' ); ?>
+    </div><!-- #widget-area-footer-two -->
+  <?php endif; ?>
 
-	<?php if ( is_active_sidebar( 'footer-widget-area-three' ) ) : ?>
-		<div class="footer-widget-area-three footer-widget-area sidebar widget-area" role="complementary">
-			<?php dynamic_sidebar( 'footer-widget-area-three' ); ?>
-		</div><!-- .footer-widget-area-three .sidebar .widget-area -->
-	<?php endif; ?>
+  <?php if ( is_active_sidebar( 'footer-widget-area-three' ) ) : ?>
+    <div id="widget-area-footer-three" class="widget-area" role="complementary">
+      <?php dynamic_sidebar( 'footer-widget-area-three' ); ?>
+    </div><!-- #widget-area-footer-three -->
+  <?php endif; ?>
 
-	<?php if ( is_active_sidebar( 'footer-widget-area-four' ) ) : ?>
-		<div class="footer-widget-area-four footer-widget-area sidebar widget-area" role="complementary">
-			<?php dynamic_sidebar( 'footer-widget-area-four' ); ?>
-		</div><!-- .footer-widget-area-four .sidebar .widget-area -->
-	<?php endif; ?>
+  <?php if ( is_active_sidebar( 'footer-widget-area-four' ) ) : ?>
+    <div id="widget-area-footer-four" class="widget-area" role="complementary">
+      <?php dynamic_sidebar( 'footer-widget-area-four' ); ?>
+    </div><!-- #widget-area-footer-four -->
+  <?php endif; ?>
 
 </div>

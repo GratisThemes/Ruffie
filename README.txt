@@ -1,10 +1,10 @@
 # Theme information
 Name: Ruffie
-Author: Kniffen (http://kniff.xyz)
+Gratis Themes (https://github.com/GratisThemes)
 License: GNU General Public License v3
 
 # Copyright
-Ruffie WordPress Theme, Copyright (C) 2017, Kniffen
+Ruffie WordPress Theme, Copyright (C) 2016-2019, Gratis Themes
 Ruffie is distributed under the terms of the GNU GPL v3
 
 This program is free software: you can redistribute it and/or modify
@@ -97,3 +97,14 @@ Font Awesome 4.6.3 by @davegandy
 - Updated theme information for author rebranding
 - Added table of contents to style.css
 - Simplified js/functions.js
+
+1.5.0 - 2018.12.29
+- Fixed and improved multiple layout and styling issues
+- Improved post formats support
+- Updated theme information for author rebranding
+- Updated language file
+- Added support for the_privacy_policy_link
+- Improved editor styles
+- Removed jQuery from functions.js
+- Added filter for archive titles
+- Improved menu styles and layout

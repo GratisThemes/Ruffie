@@ -1,13 +1,19 @@
 <?php
 /**
- * Template for displaying a widget area and additional content
+ * Template for displaying the sidebar widget area
  *
  * @package Ruffie
- * @since Ruffie 1.0
+ * @since 1.0.0
+ * @version 1.5.0
  */
+?>
 
-if ( is_active_sidebar( 'right-sidebar-widget-area' )  ) : ?>
-	<aside class="right-sidebar-widget-area sidebar widget-area" role="complementary">
-		<?php dynamic_sidebar( 'right-sidebar-widget-area' ); ?>
-	</aside><!-- .right-sidebar-widget-area .sidebar .widget-area -->
+<?php if ( is_active_sidebar( 'right-sidebar-widget-area' ) ): ?>
+
+  <aside id="widget-area-right-sidebar" class="widget-area">
+
+    <?php dynamic_sidebar( 'right-sidebar-widget-area' ); ?>
+
+  </aside>
+
 <?php endif; ?>

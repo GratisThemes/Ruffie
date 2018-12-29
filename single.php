@@ -1,22 +1,33 @@
 <?php
 /**
- * Template for displaying posts
+ * Template for displaying songle post content
  *
  * @package Ruffie
- * @since Ruffie 1.0
+ * @since 1.0.0
+ * @version 1.5.0
  */
-get_header(); ?>
+?>
 
-<?php get_sidebar('above-content'); ?>
+<?php get_header(); ?>
 
-<div class="site-content">
-	<main>
-		<?php get_template_part('template-parts/content'); ?>
-		<?php if( comments_open() || get_comments_number() ) comments_template(); ?>
-	</main>
+<div id="main-content-container">
 
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar(); ?>
-</div>
+  <?php get_sidebar( 'left' ); ?>
+
+  <main id="site-main" role="main">
+
+    <?php while ( have_posts() ): the_post(); ?>
+
+      <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+
+      <?php if ( comments_open() || get_comments_number() ) comments_template(); ?>
+
+    <?php endwhile; ?>
+
+  </main><!-- #site-main -->
+
+  <?php get_sidebar(); ?>
+
+</div><!-- #main-content-container -->
 
 <?php get_footer(); ?>

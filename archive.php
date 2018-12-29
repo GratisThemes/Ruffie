@@ -3,20 +3,49 @@
  * Template for displaying archives
  *
  * @package Ruffie
- * @since Ruffie 1.0
+ * @since 1.0.0
+ * @version 1.5.0
  */
-get_header(); ?>
+?>
 
-<?php get_sidebar('above-content'); ?>
+<?php get_header(); ?>
 
-<div class="site-content">
-	<main>
-		<?php get_template_part('template-parts/content_header'); ?>
-		<?php get_template_part('template-parts/loop'); ?>
-	</main>
+<div id="main-content-container">
 
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar(); ?>
-</div>
+  <?php get_sidebar( 'left' ); ?>
+
+  <main id="site-main" role="main">
+
+    <header class="page-header">
+      <?php the_archive_title( '<h1>', '</h1>' ); ?>
+      <?php the_archive_description(); ?>
+    </header>
+
+    <?php if ( have_posts() ): ?>
+    
+      <?php while ( have_posts() ): the_post(); ?>
+    
+        <?php get_template_part( 'template-parts/content', 'excerpt' ); ?>
+
+      <?php endwhile; ?>
+
+      <?php
+      the_posts_navigation( array(
+        'prev_text' => __( 'Older', 'ruffie' ),
+        'next_text' => __( 'Newer', 'ruffie' ),
+      ) );
+      ?>
+
+    <?php else: ?>
+      
+      <?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+    <?php endif;?>
+    
+  </main><!-- #site-main -->
+
+  <?php get_sidebar(); ?>
+
+</div><!-- #main-content-continer -->
 
 <?php get_footer(); ?>

@@ -1,53 +1,64 @@
-<?php
+ <?php
 /**
- * Template for displaying the footer
+ * Template for displaying the site footer
  *
  * @package Ruffie
- * @since Ruffie 1.0
+ * @since 1.0.0
+ * @version 1.5.0
  */
 ?>
-	<footer class="site-footer">
-		<?php get_sidebar('footer'); ?>
-		
-		<?php if ( has_nav_menu( 'footer' ) ):
-			wp_nav_menu( array(
-				'theme_location' => 'footer',
-				'menu_class'     => 'footer-menu',
-				'depth'					 =>	'1',
-				'container_id'	 => 'footer-menu-container'
-			) );
-		endif; ?>
-		
-		<div class="footer-information">
-			<span>
-				<?php echo esc_html( get_theme_mod( 'footer_text', get_bloginfo('name') ) ); ?> 
-				<?php if( get_theme_mod( 'footer_copyright', true ) ): ?>&copy;<?php endif; ?> 
-				<?php if( get_theme_mod( 'footer_year', true) ): echo date_i18n(__("Y", "ruffie")); endif; ?> 
-			</span>
-			
-			<?php if( get_theme_mod( 'footer_advert', true) ): ?>
-				<span>
-					<?php
-						$ruffie_theme_data = wp_get_theme();
+    <?php get_sidebar( 'footer' ); ?>
 
-						printf( __( 'Theme: <a href="%2$s">%1$s</a>', 'ruffie' ),
-							$ruffie_theme_data['Name'],
-							esc_url( $ruffie_theme_data->get( 'ThemeURI' ) )
-						);
-					?>
-				</span>
-			<?php endif; ?>
-		</div>
+    <footer id="site-footer">
+      <?php
+      if ( has_nav_menu( 'footer' ) ) {
+        wp_nav_menu( array(
+          'theme_location' => 'footer',
+          'menu_id'        => 'footer-nav',
+          'container'      => false,
+          'depth'          => 1,
+        ) );
+      }
+      ?>
 
-		<?php if ( get_theme_mod( 'scrolltotop', true ) ) { ?>
-			<a class="scroll-to-top" href="#"><i class="fa fa-angle-up"></i></a>
-		<?php } ?>
+      <div id="site-footer-information">
+        <span>
+        <?php
+          echo get_theme_mod( 'footer_text', get_bloginfo( 'name' ) );
+          if ( get_theme_mod( 'footer_copyright', true ) ) echo ' &copy;';
+          if ( get_theme_mod( 'footer_year', true ) ) echo ' ' . date( 'Y' );
+        ?>
+        </span>
 
-	</footer>
+        <?php
+        if ( get_theme_mod( 'footer_advert', true ) ) {
+          $ruffie_theme_data = wp_get_theme();
 
-</div> <!-- .site-wrapper -->
+          printf(
+            '<span>' . __( 'Theme: %s', 'ruffie' ) . '</span>',
+            '<a href="' . esc_url( $ruffie_theme_data->get( 'ThemeURI' ) ) . '">' . $ruffie_theme_data[ 'Name' ] . '</a>'
+          );
+        }
+        ?>
 
-<?php wp_footer(); ?>
+        <?php
+        if ( function_exists( 'the_privacy_policy_link' ) ) {
+          the_privacy_policy_link();
+        }
+        ?>
 
+      </div><!-- #site-footer-information -->
+
+      <?php if ( get_theme_mod( 'scrolltotop', true ) ): ?>
+        <a href="#" id="scroll-to-top">
+          <span class="screen-reader-text"><?php _e( 'Scroll to the top', 'ruffie' ); ?></span>
+        </a>
+      <?php endif; ?>
+
+    </footer><!-- #site-footer -->
+  </div><!-- #site-wrapper -->
+
+  <?php wp_footer(); ?>
+  
 </body>
 </html>

@@ -1,53 +1,47 @@
 <?php
 /**
- * The template part for displaying content
+ * Template for displaying post header, content and footer
  *
  * @package Ruffie
- * @since Ruffie 1.3.0
+ * @since 1.3.0
+ * @version 1.5.0
  */
-if( have_posts() ):
-	while( have_posts() ): the_post(); ?>
-		<?php get_template_part('template-parts/content_header'); ?>
-	
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<?php the_content(); ?>
+?>
+<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  
+  <?php get_template_part( 'template-parts/header', 'entry' ); ?>
 
-			<div class="ruffie-clearfloats">&nbsp;</div>
-		</article>
+  <?php if ( 
+    get_the_post_thumbnail() !== '' &&
+    (
+      (  is_singular() && get_theme_mod( 'thumbnail_content', true ) ) ||
+      ( !is_singular() && get_theme_mod( 'thumbnail_index',   true ) )
+    )
+  ): ?>
+    
+    <a class="post-thumbnail" href="<?php the_permalink() ?>">
+      
+      <?php the_post_thumbnail( 'ruffie-featured-image' ); ?>
+    
+    </a><!-- .post-thumbnail -->
+  
+  <?php endif; ?>
 
-		<?php if( get_theme_mod( 'entry_meta_tags', true ) && has_tag() ): ?>
-			<div class="tags">
-				<?php the_tags('', ' ') ?>
-			</div>
-		<?php endif; ?>
-	
-		<?php if( is_single() ){
-			wp_link_pages( array(
-				'before'      => '<div class="pagination"><span class="page-links-title">' . __( 'Pages:', 'ruffie' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'ruffie' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
-		} ?>
+  <article class="entry-content">
+    
+    <?php the_content(); ?>
 
-		<?php ( !is_page() ) ? get_template_part('template-parts/author_bio') : false; ?>
-		
-		<?php if ( is_singular( 'post' ) ):
-			// Previous/next post navigation.
-			the_post_navigation( array(
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next post:', 'ruffie' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true"></span> ' .
-					'<span class="screen-reader-text">' . __( 'Previous post:', 'ruffie' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-			) );
-		endif; ?>
-	
-	<?php endwhile; ?>
+    <?php
+    wp_link_pages( array(
+      'before' => '<div class="page-links">' . __( 'Pages:', 'ruffie' ),
+      'after' => '</div>',
+      'link_before' => '<span class="page-number">',
+      'link_after' => '</span>',
+    ) );
+    ?>
 
-<?php else: ?>
-	<?php get_template_part( 'template-parts/content', 'none' ); ?>
+  </article><!-- .post-content -->
 
-<?php endif; ?>
+  <?php if ( is_single() ) get_template_part( 'template-parts/footer', 'entry' ); ?>
+
+</section>
