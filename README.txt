@@ -51,6 +51,10 @@ License: Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0
 
 # Changelog
 
+2.0.1 - 2021.08.03
+- Fixed search widget
+- Fixed overflow when using both sidebars
+
 2.0.0 - 2021.08.03
 Rewritten from the ground up Ruffie 2.0 aims to capture the original vision for the theme, but with a complete reimagining.
 
