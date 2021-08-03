@@ -57,11 +57,12 @@ body.has-left-sidebar.has-right-sidebar {
   }
   .content-container {
     flex-basis: 58%;
-    min-width: 30em;
+    min-width: 16em;
   }
 
   .widget-area-left-sidebar,
   .widget-area-right-sidebar {
+    flex-grow: 0;
     flex-basis: 13em;
     min-width: 13em;
   }
