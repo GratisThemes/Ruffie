@@ -1,0 +1,49 @@
+/* Site header: Branding */
+.site-title {
+  display: inline-block;
+  margin: 0;
+  background-color: var(--color-white);
+  border: var(--border-width--600) solid var(--border-color);
+  border-radius: 1em;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 0 .5em;
+  color: var(--site-title-color);
+  text-transform: uppercase;
+
+  a {
+    text-decoration: none;
+    color: var(--site-title-color);
+  }
+}
+
+.site-branding > * + * {
+  margin-block-start: .5em;
+}
+
+.custom-logo-link {
+  display: block;
+
+  img {
+    border: none;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 48em) {
+  .site-branding {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: flex-start;
+
+    > * + * {
+      margin: 0;
+    }
+  }
+
+  .site-title {
+    margin: 0;
+  }
+}

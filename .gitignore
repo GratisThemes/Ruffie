@@ -66,5 +66,5 @@ package-lock.json
 # Packaged releases
 releases/
 
-# Font awesome
-/assets/icons/font-awesome
+# icons
+/assets/icons

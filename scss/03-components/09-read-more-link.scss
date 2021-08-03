@@ -1,0 +1,15 @@
+/* Components: Read more link */
+.read-more-link {
+  background-color: var(--color-black);
+  border: none;
+  color: var(--color-white);
+  position: relative;
+  display: table-cell;
+  inset-block-start: 1em;
+  text-decoration: none;
+  padding: .25em .75em;
+
+  &:hover {
+    background-color: var(--color-black--600);
+  }
+}

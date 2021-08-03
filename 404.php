@@ -3,41 +3,37 @@
  * Template for displaying 404 Not Found error
  *
  * @package Ruffie
- * @since 1.0.0
- * @version 1.5.0
+ * @since   Ruffie 1.0
  */
+
 ?>
 
 <?php get_header(); ?>
 
-<div id="main-content-container">
+<main class="site-main" role="main">
 
-  <main id="site-main" role="main">
+  <section class="content-container">
 
-    <section class="error-404 not-found">
-
+    <article class="error-404 not-found">
       <header class="page-header">
-        <h1><?php _e( '404 Not Found', 'ruffie' ); ?></h1>
+        <h1><?php esc_html_e( '404 Not Found', 'ruffie' ); ?></h1>
       </header>
-
-      <div class="entry-content">
-        
+      
+      <section class="entry-content">
         <p>
-          <?php _e( 'Oops! That page can&rsquo;t be found.', 'ruffie' ); ?>
-          
+          <?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ruffie' ); ?>
           <br />
-          
-          <?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'ruffie' ); ?>
+          <?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'ruffie' ); ?>
         </p>
 
         <?php get_search_form(); ?>
-      
-      </div><!-- .entry-content -->
 
-    </section><!-- .error-404 -->
+      </section><!-- .entry-content -->
 
-  </main><!-- #site-main -->
+    </article><!-- .error-404 -->
 
-</div><!-- #main-content-continer -->
+  </section><!-- .content-container -->
+
+</main><!-- .site-main -->
 
 <?php get_footer(); ?>

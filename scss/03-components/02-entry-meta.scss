@@ -1,0 +1,24 @@
+/* Components: Entry meta */
+.entry-meta {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  font-size: 1rem;
+  align-items: flex-start;
+
+  i {
+    margin-inline-end: .25em;
+  }
+}
+
+@media (min-width: 68em) {
+  .entry-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  article.author-hidden .entry-meta {
+    justify-content: flex-start;
+  }
+}

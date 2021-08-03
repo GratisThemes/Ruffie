@@ -1,0 +1,92 @@
+/* Compoinents: Nav links */
+.content-container > .navigation {
+  background-color: initial;
+  border: initial;
+  border-radius: initial;
+  padding: initial;
+}
+
+.single .content-container > .navigation {
+  margin-block-start: 1em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1em;
+  text-transform: uppercase;
+  font-weight: 800;
+
+  a {
+    color: var(--color-black);
+  }
+}
+
+.nav-previous,
+.nav-next,
+.page-numbers:not(.dots) {
+  background-color: var(--color-white);
+  border: var(--border-width--300) solid var(--border-color);
+  border-radius: 2em;
+  text-decoration: none;
+  color: var(--color-black);
+
+  a {
+    color: var(--color-black);
+  }
+
+  &:hover:not(.current) {
+    background-color: var(--color-black);
+    color: var(--color-white);
+
+    a {
+      color: var(--color-white);
+    }
+  }
+}
+
+.nav-previous a,
+.nav-next a,
+.page-numbers:not(.dots) {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: .25em .5em;
+}
+
+.page-numbers.dots {
+  padding: .75em .5em 0;
+}
+
+.page-numbers.current {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.nav-previous i,
+.page-numbers.prev i {
+  margin-right: .5em;
+}
+
+.nav-next i,
+.page-numbers.next i {
+  margin-left: .5em;
+}
+
+@media (min-width: 48em) {
+  .nav-previous,
+  .nav-next,
+  .page-numbers:not(.dots) {
+    background-color: var(--color-white);
+  }
+
+  .nav-next {
+    margin-inline-start: auto;
+  }
+
+  .nav-previous ~ .nav-next {
+    margin-inline-start: 0;
+  }
+}

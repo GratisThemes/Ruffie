@@ -1,0 +1,27 @@
+/* Base: Tables */
+table,
+td,
+th {
+  border: var(--border-width--100) solid var(--border-color);
+}
+
+table {
+  display: inline-block;
+  border-spacing: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-block-end: 1em;
+}
+
+ td,
+ th {
+  padding: 1em;
+}
+
+@media (min-width: 28em) {
+  table {
+    display: table;
+    white-space: initial;
+  }
+}

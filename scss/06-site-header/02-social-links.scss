@@ -1,0 +1,34 @@
+/* Site header: Social links */
+.social-links {
+  font-size: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  justify-content: center;
+
+  a {
+    background-color: var(--color-white);
+    border: var(--border-width--600) solid var(--border-color);
+    border-radius: 100%;
+    box-sizing: content-box;
+    width: 1.85em;
+    height: 1.85em;
+    line-height: 1.85em;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-black);
+
+    &:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .social-links {
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-content: flex-start;
+  }
+}

@@ -1,0 +1,36 @@
+/* Base: Root */
+:root {
+  --color-white: #FFFFFF;
+  --color-red:   #CA2F2A;
+
+  --color-gray:    #E9E9E9;
+  --color-gray--400: var(--color-gray);
+  --color-gray--600: #dddddd;
+  --color-gray--900: #737373;
+
+  --color-black:    #191919;
+  --color-black--400: var(--color-black);
+  --color-black--600: #000000;
+
+  --font-family: 'Open Sans', sans-serif;
+  --font-size:   1.2rem;
+  --font-style:  normal;
+
+  --border-width:       .0625rem;
+  --border-width--100:  var(--border-width);
+  --border-width--200:  .125rem;
+  --border-width--300:  .1875rem;
+  --border-width--400:  .25rem;
+  --border-width--500:  .3125rem;
+  --border-width--600:  .375rem;
+  --border-width--800:  .5rem;
+  --border-width--900:  .5625rem;
+
+  --border-color:  var(--color-black);
+
+  --background-color:   var(--color-red);
+  --text-color:         var(--color-black);
+  --anchor-color:       var(--color-black);
+  --site-title-color:   var(--color-black);
+  --site-tagline-color: var(--color-black);
+}

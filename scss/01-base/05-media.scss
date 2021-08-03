@@ -1,0 +1,122 @@
+/* Base: Media */
+img,
+figure,
+iframe,
+embed,
+object {
+  max-width: 100%;
+  font-size: 1rem;
+}
+
+img {
+  background-color: var(--border-color);
+  vertical-align: bottom;
+  height: auto;
+  border: var(--border-width--200) solid var(--border-color);
+  border-radius: .5em;
+}
+
+figure {
+  margin: 0;
+}
+
+.wp-caption {
+  background-color: var(--border-color);
+  border: var(--border-width--300) solid var(--border-color);
+  border-radius: .5em;
+  overflow: hidden;
+  max-width: 100%;
+
+  img {
+    background-color: initial;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.wp-caption-text {
+  background-color: var(--color-gray);
+  color: var(--color-black);
+  border-block-start: var(--border-width--300) solid var(--border-color);
+  padding: .5em;
+  text-align: start;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  max-width: 100%;
+  gap: 1em;
+  margin-block-end: 2em;
+}
+
+.gallery-item {
+  background-color: var(--color-gray);
+  border: var(--border-width--300) solid var(--border-color);
+  border-radius: .5em;
+  overflow: hidden;
+
+  .wp-caption-text {
+    background-color: transparent;
+    color: var(--text-color);
+    font-weight: 600;
+  }
+  
+  img {
+    display: block;
+    margin-inline: auto;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+.gallery-caption {
+  text-align: initial;
+  font-weight: normal;
+}
+
+@media (min-width: 48em) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery-columns-1 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .gallery-columns-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-columns-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gallery-columns-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .gallery-columns-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .gallery-columns-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .gallery-columns-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .gallery-columns-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .gallery-columns-9 {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .gallery-columns-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+}

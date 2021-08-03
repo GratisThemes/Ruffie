@@ -1,0 +1,114 @@
+/* Site header navigation */
+.header-nav-container {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 100%;
+  text-align: end;
+  padding: 1em;
+  margin-inline: 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  a {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+}
+
+#header-nav-toggle {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+#header-nav-toggle:focus-visible ~ .header-nav-toggle-label {
+  outline: 0.128em solid var(--color-white);
+}
+
+.header-nav-container .header-nav-toggle-label {
+  position: relative;
+  z-index: 20;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  &__open,
+  &__close {
+    i {
+      margin-inline-start: .25em;
+    }
+  }
+
+   &__close {
+    display: none;
+  }
+}
+#header-nav-toggle:checked ~ .header-nav-toggle-label {
+  .header-nav-toggle-label__open {
+    display: none;
+  }
+
+  .header-nav-toggle-label__close {
+    display: initial;
+  }
+}
+
+.header-nav {
+  text-align: center;
+  background-color: var(--color-black);
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  padding: 4em 1em 1em;
+  flex-direction: column;
+  gap: 1.5em;
+  display: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  ul {
+    margin-block-start: .5em;
+    font-weight: 600;
+    
+    li {
+      margin-block: .5em;
+    }
+  }
+
+  li:hover > ul,
+  li:focus-within > ul {
+    display: block;
+  }
+
+  > li.menu-item-has-children > a::after {
+    display: inline-block;
+    content: '';
+    position: relative;
+    inset-inline-start: .5em;
+    inset-block-start: -.128em;
+    width: 0.5em;
+    height: 0.5em;
+    margin: 0;
+    transform: rotate(135deg);
+    vertical-align: middle;
+    border-inline-end: var(--border-width--300) solid var(--color-white);
+    border-inline-start: none;
+    border-block-start: var(--border-width--300) solid var(--color-white);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .header-nav > li > ul {
+    display: none;
+  }
+}
+
+#header-nav-toggle:checked ~ .header-nav {
+  display: flex;
+}

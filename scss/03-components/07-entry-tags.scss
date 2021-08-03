@@ -1,0 +1,24 @@
+/* Components: Entry tags */
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  a {
+    background-color: var(--color-gray);
+    color: var(--color-black);
+    padding: .25em .5em;
+    border: var(--border-width--200) solid var(--border-color);
+    border-radius: 1em;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+    
+  }
+}

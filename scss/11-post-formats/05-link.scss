@@ -1,0 +1,29 @@
+/* Post formats: Link*/
+body:not(.single) article.format-link {
+  background-color: initial;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+
+  .entry-content a {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 2em;
+    display: block;
+    padding: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+
+    &:hover {
+      background-color: var(--color-black--600);
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  body:not(.single) article.format-link {
+    font-size: 2rem;
+  }
+}

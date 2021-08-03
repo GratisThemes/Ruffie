@@ -1,0 +1,20 @@
+/* Post formats: Aside*/
+body:not(.single) article.format-aside {
+  .entry-meta {
+    font-weight: 800;
+    text-transform: uppercase;
+    justify-content: flex-start;
+  }
+
+  .entry-content {
+    margin-block-start: .5em;
+
+    > *:first-child {
+      margin-block-start: 0;
+    }
+    
+    p {
+      margin-block-end: 0;
+    }
+  }
+}

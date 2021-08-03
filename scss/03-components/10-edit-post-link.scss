@@ -1,0 +1,17 @@
+/* Components: Post edit link */
+.post-edit-link {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.entry-header .post-edit-link {
+  color: var(--color-gray--900);
+
+  &:hover {
+    color: var(--color-black);
+  }
+}
