@@ -5,7 +5,7 @@
   Author: Gratis Themes
   Author URI: https://gratisthemes.kniffen.dev/
   Description: Easily build a comic book inspired site. Create a comic book blog to discuss the latest releases. This theme is a great way to showcase the most popular comics and other nerdy items.
-  Version: 2.0.1
+  Version: 2.0.2
   Requires at least: 5.0
   Tested up to: 5.7
   Requires PHP: 7.0
@@ -601,12 +601,13 @@ li {
 table,
 td,
 th {
-  border: var(--border-width--100) solid var(--border-color);
+  border: var(--border-width--200) solid var(--border-color);
 }
 
 table {
   display: inline-block;
   border-spacing: 0;
+  border-collapse: collapse;
   max-width: 100%;
   overflow-x: auto;
   white-space: nowrap;
@@ -636,9 +637,13 @@ object {
 }
 
 img {
-  background-color: var(--border-color);
   vertical-align: bottom;
   height: auto;
+}
+
+.entry-content img,
+.widget img {
+  background-color: var(--border-color);
   border: var(--border-width--200) solid var(--border-color);
   -webkit-border-radius: 0.5em;
           border-radius: 0.5em;
@@ -1594,6 +1599,11 @@ body,
   padding-inline: -webkit-calc((100% - 84rem) / 2);
   padding-inline: calc((100% - 84rem) / 2);
 }
+@media (min-width: 28em) {
+  .site-container > * {
+    margin-inline: 1rem;
+  }
+}
 .site-container > * + * {
   -webkit-margin-before: 2em;
           margin-block-start: 2em;
@@ -1613,40 +1623,43 @@ body,
           flex-grow: 1;
   gap: 1em;
 }
+@media (min-width: 48em) {
+  .site-main {
+    gap: 2em;
+  }
+}
 .site-main > * {
   max-width: 100%;
 }
 
-.content-container {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 62%;
-      -ms-flex: 1 1 62%;
-          flex: 1 1 62%;
+@media (min-width: 48em) {
+  .content-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 62%;
+        -ms-flex: 1 1 62%;
+            flex: 1 1 62%;
+    min-width: 50%;
+  }
 }
 .content-container > * + * {
   -webkit-margin-before: 1em;
           margin-block-start: 1em;
 }
+@media (min-width: 48em) {
+  .content-container > * + * {
+    -webkit-margin-before: 2em;
+            margin-block-start: 2em;
+  }
+}
 
-body.has-left-sidebar.has-right-sidebar .site-main {
-  gap: 1em;
-}
-body.has-left-sidebar.has-right-sidebar .content-container {
-  -webkit-flex-basis: 58%;
-      -ms-flex-preferred-size: 58%;
-          flex-basis: 58%;
-  min-width: 16em;
-}
-body.has-left-sidebar.has-right-sidebar .widget-area-left-sidebar,
-body.has-left-sidebar.has-right-sidebar .widget-area-right-sidebar {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  -webkit-flex-basis: 13em;
-      -ms-flex-preferred-size: 13em;
-          flex-basis: 13em;
-  min-width: 13em;
+@media (min-width: 64em) {
+  body.has-left-sidebar.has-right-sidebar .content-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 33%;
+        -ms-flex: 1 1 33%;
+            flex: 1 1 33%;
+    min-width: 33%;
+  }
 }
 
 .widget-area-left-sidebar,
@@ -1667,6 +1680,13 @@ body.has-left-sidebar.has-right-sidebar .widget-area-right-sidebar {
   -webkit-border-radius: 1em;
           border-radius: 1em;
 }
+@media (min-width: 48em) {
+  .content-container > article,
+.content-container > .comments-area,
+.content-container > .comment-respond {
+    padding: 1em;
+  }
+}
 .content-container > article > * + *,
 .content-container > .comments-area > * + *,
 .content-container > .comment-respond > * + * {
@@ -1674,27 +1694,6 @@ body.has-left-sidebar.has-right-sidebar .widget-area-right-sidebar {
           margin-block-start: 1em;
 }
 
-@media (min-width: 28em) {
-  .site-container > * {
-    margin-inline: 1rem;
-  }
-}
-@media (min-width: 48em) {
-  .site-main {
-    gap: 2em;
-  }
-
-  .content-container > * + * {
-    -webkit-margin-before: 2em;
-            margin-block-start: 2em;
-  }
-
-  .content-container > article,
-.content-container > .comments-area,
-.content-container > .comment-respond {
-    padding: 1em;
-  }
-}
 /* Pages/lauout: Attachment */
 .attachment .entry-meta {
   -webkit-box-pack: start;
@@ -2158,7 +2157,7 @@ body.has-left-sidebar.has-right-sidebar .widget-area-right-sidebar {
   margin: 2em 1em 0 0;
 }
 
-.comment + .comment {
+.comment-list > * + * {
   -webkit-margin-before: 2em;
           margin-block-start: 2em;
   border-top: var(--border-width--200) dashed var(--color-gray);
@@ -2191,6 +2190,10 @@ body.has-left-sidebar.has-right-sidebar .widget-area-right-sidebar {
   display: inline-grid;
   grid-template-columns: -webkit-calc(42px + .128em * 2) minmax(0, auto);
   grid-template-columns: calc(42px + .128em * 2) minmax(0, auto);
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   grid-column: 1/3;
   grid-row: 1/3;
   gap: 0.5em;

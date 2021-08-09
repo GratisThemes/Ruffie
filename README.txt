@@ -51,6 +51,12 @@ License: Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0
 
 # Changelog
 
+2.0.2 - 2021.08.09
+- Fixed images outside of the content having backgrounds and borders
+- Fixed layout breaking with wide content and sidebars
+- Fixed table borders not being consistent
+- Fixed pingback spacing not being styles the same as comments
+
 2.0.1 - 2021.08.03
 - Fixed search widget
 - Fixed overflow when using both sidebars
