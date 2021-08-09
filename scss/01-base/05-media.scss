@@ -9,11 +9,17 @@ object {
 }
 
 img {
-  background-color: var(--border-color);
   vertical-align: bottom;
   height: auto;
-  border: var(--border-width--200) solid var(--border-color);
-  border-radius: .5em;
+}
+
+.entry-content,
+.widget {
+  img {
+    background-color: var(--border-color);
+    border: var(--border-width--200) solid var(--border-color);
+    border-radius: .5em;
+  }
 }
 
 figure {
