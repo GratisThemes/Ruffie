@@ -66,10 +66,11 @@ body,
   }
 }
 
-body.has-left-sidebar.has-right-sidebar .content-container {
+body.has-left-sidebar.has-right-sidebar .site-main {
   @media (min-width: 64em) {
-    flex: 1 1 33%;
-    min-width: 33%;
+    display: grid;
+    grid-template-columns: minmax(0, 18em) minmax(22em, 1fr) minmax(0, 18em);
+    gap: .5em;
   }
 }
 
@@ -77,6 +78,15 @@ body.has-left-sidebar.has-right-sidebar .content-container {
 .widget-area-right-sidebar {
   flex: 1 1 14em;
   min-width: 14em;
+}
+
+body.has-left-sidebar.has-right-sidebar {
+  .widget-area-left-sidebar > * + *,
+  .widget-area-right-sidebar > * + *  {
+    @media (min-width: 64em) {
+      margin-block-start: .5em;
+    }
+  }
 }
 
 .content-container > article,
