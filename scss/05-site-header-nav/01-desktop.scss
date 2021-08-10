@@ -24,7 +24,6 @@
     inset: initial;
     width: initial;
     height: initial;
-    
     font-size: 1rem;
     font-weight: 800;
     text-align: initial;
@@ -36,14 +35,14 @@
     }
 
     > li {
-      padding: .5em;
+      padding: 1em;
     }
 
     > li > ul {
       display: none;
       background-color: var(--border-color);
       position: absolute;
-      inset-block-start: 1.5em;
+      inset-block-start: 2em;
       inset-inline-start: -.5em;
       padding: .25em 1em;
       z-index: 20;

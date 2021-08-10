@@ -75,10 +75,11 @@
   ul {
     margin-block-start: .5em;
     font-weight: 600;
-    
-    li {
-      margin-block: .5em;
-    }
+  }
+
+  li {
+    margin: 0;
+    padding: .5em;
   }
 
   li:hover > ul,
