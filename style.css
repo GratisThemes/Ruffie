@@ -5,7 +5,7 @@
   Author: Gratis Themes
   Author URI: https://gratisthemes.kniffen.dev/
   Description: Easily build a comic book inspired site. Create a comic book blog to discuss the latest releases. This theme is a great way to showcase the most popular comics and other nerdy items.
-  Version: 2.0.2
+  Version: 2.0.3
   Requires at least: 5.0
   Tested up to: 5.7
   Requires PHP: 7.0
@@ -589,12 +589,13 @@ dd {
 
 ul,
 ol {
-  margin: 0 0 0 2em;
+  -webkit-margin-start: 2em;
+          margin-inline-start: 2em;
   padding: 0;
 }
 
 li {
-  line-height: 1.5;
+  margin-block: 0.65em;
 }
 
 /* Base: Tables */
@@ -1653,12 +1654,10 @@ body,
 }
 
 @media (min-width: 64em) {
-  body.has-left-sidebar.has-right-sidebar .content-container {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 33%;
-        -ms-flex: 1 1 33%;
-            flex: 1 1 33%;
-    min-width: 33%;
+  body.has-left-sidebar.has-right-sidebar .site-main {
+    display: grid;
+    grid-template-columns: minmax(0, 18em) minmax(22em, 1fr) minmax(0, 18em);
+    gap: 0.5em;
   }
 }
 
@@ -1669,6 +1668,14 @@ body,
       -ms-flex: 1 1 14em;
           flex: 1 1 14em;
   min-width: 14em;
+}
+
+@media (min-width: 64em) {
+  body.has-left-sidebar.has-right-sidebar .widget-area-left-sidebar > * + *,
+body.has-left-sidebar.has-right-sidebar .widget-area-right-sidebar > * + * {
+    -webkit-margin-before: 0.5em;
+            margin-block-start: 0.5em;
+  }
 }
 
 .content-container > article,
@@ -1793,8 +1800,9 @@ body,
           margin-block-start: 0.5em;
   font-weight: 600;
 }
-.header-nav ul li {
-  margin-block: 0.5em;
+.header-nav li {
+  margin: 0;
+  padding: 0.5em;
 }
 .header-nav li:hover > ul,
 .header-nav li:focus-within > ul {
@@ -1879,13 +1887,13 @@ body,
     white-space: nowrap;
   }
   .header-nav > li {
-    padding: 0.5em;
+    padding: 1em;
   }
   .header-nav > li > ul {
     display: none;
     background-color: var(--border-color);
     position: absolute;
-    inset-block-start: 1.5em;
+    inset-block-start: 2em;
     inset-inline-start: -0.5em;
     padding: 0.25em 1em;
     z-index: 20;

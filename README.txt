@@ -51,6 +51,10 @@ License: Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0
 
 # Changelog
 
+2.0.3 - 2021.08.10
+- Fixed list spacing
+- Improved two-sidebar layout
+
 2.0.2 - 2021.08.09
 - Fixed images outside of the content having backgrounds and borders
 - Fixed layout breaking with wide content and sidebars
