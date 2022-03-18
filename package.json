@@ -1,6 +1,6 @@
 {
   "name": "ruffie",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Comic book inspired WordPress theme",
   "private": true,
   "scripts": {
@@ -22,13 +22,13 @@
   "author": {
     "name": "Gratis Themes",
     "email": "gratisthemes@gmail.com",
-    "url": "https://gratisthemes.kniffen.dev"
+    "url": "https://gratis-themes.com"
   },
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/GratisThemes/Ruffie/issues"
   },
-  "homepage": "https://gratisthemes.kniffen.dev/themes/ruffie",
+  "homepage": "https://gratis-themes.com/themes/ruffie",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",

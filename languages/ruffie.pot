@@ -1,4 +1,4 @@
-# Copyright (C) 2021 ruffie
+# Copyright (C) 2022 ruffie
 # This file is distributed under the same license as the ruffie package.
 msgid ""
 msgstr ""
